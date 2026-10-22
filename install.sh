@@ -5,7 +5,7 @@ INSTALL_DIR="/data/drivers/shm-et340"
 SERVICE_DIR="${INSTALL_DIR}/service"
 SERVICE_LINK="/service/shm-et340"
 RC_LOCAL="/data/rc.local"
-REPO="mitchese/shm-et340"
+REPO="nab0nid/shm-et340"
 
 # Detect architecture
 ARCH=$(uname -m)
