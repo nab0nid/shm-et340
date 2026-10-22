@@ -3,4 +3,5 @@ exec 2>&1
 # Uncomment and edit as needed:
 # export SMA_ENERGY_METER=true
 # export LOG_LEVEL=debug
+export SWAP_L1_L3=true
 exec /data/drivers/shm-et340/shm-et340
