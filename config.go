@@ -51,6 +51,12 @@ func ParseConfig() Config {
 	flag.StringVar(&cfg.DBusName, "dbus-name", envOrDefault("DBUS_NAME", "com.victronenergy.grid.cgwacs_ttyUSB0_di30_mb1"), "D-Bus service name")
 	flag.StringVar(&cfg.LogLevel, "log-level", envOrDefault("LOG_LEVEL", "info"), "log level (debug, info, warn, error)")
 	flag.BoolVar(&cfg.IsEnergyMeter, "energy-meter", envBoolOrDefault("SMA_ENERGY_METER", false), "SMA Energy Meter 1.0 mode (vs SHM 2.0)")
+	flag.BoolVar(
+    &cfg.SwapL1L3,
+    "swap-l1-l3",
+    envBoolOrDefault("SWAP_L1_L3", false),
+    "swap L1 and L3 phase data",
+	)
 	flag.BoolVar(&cfg.DiagnoseMode, "diagnose", false, "run diagnostic checks and exit")
 	flag.BoolVar(&cfg.ShowVersion, "version", false, "print version and exit")
 	flag.IntVar(&staleSeconds, "stale-timeout", envIntOrDefault("STALE_TIMEOUT", 30), "seconds without data before marking stale")
