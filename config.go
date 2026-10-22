@@ -37,8 +37,9 @@ type Config struct {
 	DiagnoseMode     bool
 	StaleTimeout     time.Duration
 	ShowVersion      bool
+	SwapL1L3 		 bool
 }
-
+	
 // ParseConfig parses CLI flags with env-var fallbacks for backward compatibility.
 func ParseConfig() Config {
 	var cfg Config
