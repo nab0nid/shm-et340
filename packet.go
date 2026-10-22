@@ -172,6 +172,10 @@ func (a *App) HandleMessage(src *net.UDPAddr, n int, b []byte) {
 		L3 = decodePhaseChunk(b[shmPhaseL3Start : shmPhaseL3Start+phaseChunkSize])
 	}
 
+	if a.config.SwapL1L3 {
+    L1, L3 = L3, L1
+	}
+
 	if log.IsLevelEnabled(log.DebugLevel) {
 		PrintPhaseTable(L1, L2, L3)
 	}
